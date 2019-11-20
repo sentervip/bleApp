@@ -215,7 +215,7 @@ public class MainActivity extends EventBusBaseActivity {
         if(requestCode == 100){
             leds = 3;
 
-            PHYApplication.getBandUtil().ledSetting(0,LightColor.RED);
+            //PHYApplication.getBandUtil().ledSetting(0,LightColor.RED);  // by aizj md
             leds --;
         }
     }
