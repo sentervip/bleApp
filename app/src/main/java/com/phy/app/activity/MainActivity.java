@@ -159,9 +159,9 @@ public class MainActivity extends EventBusBaseActivity {
     }
 
     public void go2LED(View view){
-        if(!checkIsConnected()){
-            return;
-        }
+       // if(!checkIsConnected()){  // by aizj
+        //    return;
+        //}
 
         Intent intent = new Intent(this,LEDActivity.class);
         startActivityForResult(intent,100);
