@@ -41,53 +41,42 @@ public class LEDActivity extends EventBusBaseActivity implements IndicatorSeekBa
     Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
-            if(msg.what == RTAG){
-                PHYApplication.getBandUtil().ledSetting(rData,LightColor.RED);
-                if(isRRunning){
-                    handler.sendEmptyMessageDelayed(RTAG,INTERVAL);
-                }
-            }else if(msg.what == GTAG){
-                PHYApplication.getBandUtil().ledSetting(gData,LightColor.GREE);
-                if(isGRunning){
-                    handler.sendEmptyMessageDelayed(GTAG,INTERVAL);
-                }
-            }else if(msg.what == BTAG){
-                PHYApplication.getBandUtil().ledSetting(bData,LightColor.BLUE);
-                if(isBRunning){
-                    handler.sendEmptyMessageDelayed(BTAG,INTERVAL);
-                }
-            }else if(msg.what == ColorTag){
-                PHYApplication.getBandUtil().ledSetting(0,LightColor.Color0); // by aizj add
-                if(isBRunning){
-                    handler.sendEmptyMessageDelayed(BTAG,INTERVAL);
-                }
-            }else if(msg.what == ColorTag+1){
-                PHYApplication.getBandUtil().ledSetting(0,LightColor.Color1);
-                if(isBRunning){
-                    handler.sendEmptyMessageDelayed(BTAG,INTERVAL);
-                }
-            }else if(msg.what == ColorTag+2){
-                PHYApplication.getBandUtil().ledSetting(0,LightColor.Color2);
-                if(isBRunning){
-                    handler.sendEmptyMessageDelayed(BTAG,INTERVAL);
-                }
-            }else if(msg.what == ModelTag){
-                PHYApplication.getBandUtil().ledSetting(0,LightColor.Model0);
-                if(isBRunning){
-                    handler.sendEmptyMessageDelayed(BTAG,INTERVAL);
-                }
-            }else if(msg.what == ModelTag+1){
-                PHYApplication.getBandUtil().ledSetting(0,LightColor.Model1);
-                if(isBRunning){
-                    handler.sendEmptyMessageDelayed(BTAG,INTERVAL);
-                }
-            }else if(msg.what == ModelTag+2){
-            PHYApplication.getBandUtil().ledSetting(0,LightColor.Model2);
-            if(isBRunning){
-                handler.sendEmptyMessageDelayed(BTAG,INTERVAL);
-            }
-        }
-        }
+			switch(msg.what){
+				case RTAG:
+					PHYApplication.getBandUtil().ledSetting(rData,LightColor.RED);
+					if(isRRunning){
+						handler.sendEmptyMessageDelayed(RTAG,INTERVAL);
+					}
+					break;
+				case GTAG:
+					PHYApplication.getBandUtil().ledSetting(gData,LightColor.GREE);
+					if(isGRunning){
+						handler.sendEmptyMessageDelayed(GTAG,INTERVAL);
+					}
+				case BTAG:
+					PHYApplication.getBandUtil().ledSetting(bData,LightColor.BLUE);
+					if(isBRunning){
+						handler.sendEmptyMessageDelayed(BTAG,INTERVAL);
+					}
+					break;
+				case ColorTag:
+					PHYApplication.getBandUtil().ledSetting(0,LightColor.Color0); // by aizj add
+					break;
+				case (ColorTag+1):
+					PHYApplication.getBandUtil().ledSetting(0,LightColor.Color1); break;
+				case ( ColorTag+2):
+					PHYApplication.getBandUtil().ledSetting(0,LightColor.Color2);break;
+					
+					
+				case (ModelTag):
+					PHYApplication.getBandUtil().ledSetting(0,LightColor.Model0);break;
+				case ( ModelTag+1):
+					PHYApplication.getBandUtil().ledSetting(0,LightColor.Model1);break;
+				case (ModelTag+2):
+					PHYApplication.getBandUtil().ledSetting(0,LightColor.Model2);break;
+				default: break;
+              }//switch
+		}
     };
 
     @Override
@@ -108,32 +97,28 @@ public class LEDActivity extends EventBusBaseActivity implements IndicatorSeekBa
         findViewById(R.id.BtnColor0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "onClick:ColorTag ");
-                isBRunning = true;
+                Log.i(TAG, "onClick:ColorTag0 ");
                 handler.sendEmptyMessageDelayed(ColorTag,INTERVAL);
             }
         });
         findViewById(R.id.BtnColor1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "onClick:ColorTag ");
-                isBRunning = true;
+                Log.i(TAG, "onClick:ColorTag1 ");
                 handler.sendEmptyMessageDelayed(ColorTag+1,INTERVAL);
             }
         });
         findViewById(R.id.BtnColor2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "onClick:ColorTag ");
-                isBRunning = true;
+                Log.i(TAG, "onClick:ColorTag2 ");
                 handler.sendEmptyMessageDelayed(ColorTag+2,INTERVAL);
             }
         });
         findViewById(R.id.btnM0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "onClick:ModelTag ");
-                isBRunning = true;
+                Log.i(TAG, "onClick:ModelTag0 ");
                 handler.sendEmptyMessageDelayed(ModelTag,INTERVAL);
             }
         });
@@ -141,16 +126,14 @@ public class LEDActivity extends EventBusBaseActivity implements IndicatorSeekBa
         findViewById(R.id.btnM1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "onClick:ModelTag ");
-                isBRunning = true;
+                Log.i(TAG, "onClick:ModelTag1 ");
                 handler.sendEmptyMessageDelayed(ModelTag+1,INTERVAL);
             }
         });
         findViewById(R.id.btnM2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "onClick:ModelTag ");
-                isBRunning = true;
+                Log.i(TAG, "onClick:ModelTag2 ");
                 handler.sendEmptyMessageDelayed(ModelTag+2,INTERVAL);
             }
         });

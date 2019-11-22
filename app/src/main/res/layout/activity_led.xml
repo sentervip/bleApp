@@ -109,7 +109,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/red"
-            android:onClick="onBtnClick1"
             android:layout_marginRight="@dimen/size_dp_10"
             android:layout_weight="1"/>
         <Button
@@ -167,7 +166,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/orchid"
-            android:onClick="onBtnClick2"
             android:layout_marginRight="@dimen/size_dp_10"
             android:layout_weight="1"/>
         <Button
@@ -189,6 +187,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/pink"
+            android:layout_marginRight="@dimen/size_dp_10"
             android:layout_weight="1" />
         <Button
             android:id="@+id/btnM4"
