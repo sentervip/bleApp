@@ -94,58 +94,65 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginLeft="@dimen/size_dp_10"
-        android:layout_marginTop="@dimen/size_dp_70">
+        android:layout_marginTop="@dimen/size_dp_70"
+        android:orientation="horizontal">
+
         <TextView
             android:id="@+id/txtViewColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/size_dp_10"
             android:text="Color"
-            android:textSize="@dimen/text_size_sp_18"
-            android:layout_marginRight="@dimen/size_dp_10" />
+            android:textSize="@dimen/text_size_sp_18" />
+
         <Button
             android:id="@+id/BtnColor0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/red"
             android:layout_marginRight="@dimen/size_dp_10"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@color/red" />
+
         <Button
             android:id="@+id/BtnColor1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/yellow"
             android:layout_marginRight="@dimen/size_dp_10"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@color/yellow" />
+
         <Button
             android:id="@+id/BtnColor2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/blue"
             android:layout_marginRight="@dimen/size_dp_10"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@color/blue" />
+
         <Button
             android:id="@+id/BtnColor3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/pink"
             android:layout_marginRight="@dimen/size_dp_10"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@color/pink" />
+
         <Button
             android:id="@+id/BtnColor4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/lawngreen"
             android:layout_marginRight="@dimen/size_dp_10"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@color/lawngreen" />
+
         <Button
             android:id="@+id/BtnColor5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
             android:layout_marginRight="@dimen/size_dp_10"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@color/orange" />
 
     </LinearLayout>
     <LinearLayout
@@ -193,17 +200,39 @@
             android:id="@+id/btnM4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button"
             android:background="@color/lawngreen"
             android:layout_marginRight="@dimen/size_dp_10"
             android:layout_weight="1"/>
         <Button
             android:id="@+id/btnM5"
+            style="@style/Widget.AppCompat.Button"
+            android:background="@color/silver"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/silver"
             android:layout_marginRight="@dimen/size_dp_10"
             android:layout_weight="1"/>
 
     </LinearLayout>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/size_dp_10"
+        android:layout_marginTop="@dimen/size_dp_30">
+        <TextView
+            android:id="@+id/TextPower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POWER OFF"
+            android:textSize="@dimen/text_size_sp_45"
+            android:layout_marginRight="@dimen/size_dp_10" />
+        <Button
+            android:id="@+id/btnOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/orchid"
+            android:layout_marginRight="@dimen/size_dp_10"
+            android:layout_weight="1"/>
+    </LinearLayout>
 </LinearLayout>

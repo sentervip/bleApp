@@ -60,21 +60,36 @@ public class LEDActivity extends EventBusBaseActivity implements IndicatorSeekBa
 					}
 					break;
 				case ColorTag:
-					PHYApplication.getBandUtil().ledSetting(0,LightColor.Color0); // by aizj add
+					PHYApplication.getBandUtil().ledSetting(0,LightColor.Color1); // by aizj add
 					break;
 				case (ColorTag+1):
-					PHYApplication.getBandUtil().ledSetting(0,LightColor.Color1); break;
+					PHYApplication.getBandUtil().ledSetting(0,LightColor.Color2); break;
 				case ( ColorTag+2):
-					PHYApplication.getBandUtil().ledSetting(0,LightColor.Color2);break;
+					PHYApplication.getBandUtil().ledSetting(0,LightColor.Color3);break;
+                case (ColorTag+3):
+                    PHYApplication.getBandUtil().ledSetting(0,LightColor.Color4); // by aizj add
+                    break;
+                case (ColorTag+4):
+                    PHYApplication.getBandUtil().ledSetting(0,LightColor.Color5); break;
+                case ( ColorTag+5):
+                    PHYApplication.getBandUtil().ledSetting(0,LightColor.Color6);break;
 					
 					
 				case (ModelTag):
-					PHYApplication.getBandUtil().ledSetting(0,LightColor.Model0);break;
-				case ( ModelTag+1):
 					PHYApplication.getBandUtil().ledSetting(0,LightColor.Model1);break;
-				case (ModelTag+2):
+				case ( ModelTag+1):
 					PHYApplication.getBandUtil().ledSetting(0,LightColor.Model2);break;
-				default: break;
+				case (ModelTag+2):
+					PHYApplication.getBandUtil().ledSetting(0,LightColor.Model3);break;
+                case (ModelTag+3):
+                    PHYApplication.getBandUtil().ledSetting(0,LightColor.Model4);break;
+                case ( ModelTag+4):
+                    PHYApplication.getBandUtil().ledSetting(0,LightColor.Model5);break;
+                case (ModelTag+5):
+                    PHYApplication.getBandUtil().ledSetting(0,LightColor.Model6);break;
+                case (ModelTag+6):
+                    PHYApplication.getBandUtil().ledSetting(0,LightColor.ModelOff);break;
+                default: break;
               }//switch
 		}
     };
@@ -93,7 +108,10 @@ public class LEDActivity extends EventBusBaseActivity implements IndicatorSeekBa
         
 
         //btnRed = (Button) findViewById(R.id.btnRed);
-        //btnM1 = (Button) findViewById(R.id.btnM1);
+        btnM1 = (Button) findViewById(R.id.btnM5);
+        //btnM1.setBackground(getResources().getDrawable());
+
+        //corlor btn 6
         findViewById(R.id.BtnColor0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,6 +133,30 @@ public class LEDActivity extends EventBusBaseActivity implements IndicatorSeekBa
                 handler.sendEmptyMessageDelayed(ColorTag+2,INTERVAL);
             }
         });
+        findViewById(R.id.BtnColor3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "onClick:ColorTag3 ");
+                handler.sendEmptyMessageDelayed(ColorTag+3,INTERVAL);
+            }
+        });
+        findViewById(R.id.BtnColor4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "onClick:ColorTag4 ");
+                handler.sendEmptyMessageDelayed(ColorTag+4,INTERVAL);
+            }
+        });
+        findViewById(R.id.BtnColor5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "onClick:ColorTag5 ");
+                handler.sendEmptyMessageDelayed(ColorTag+5,INTERVAL);
+            }
+        });
+
+
+        //model btn 7
         findViewById(R.id.btnM0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,7 +164,7 @@ public class LEDActivity extends EventBusBaseActivity implements IndicatorSeekBa
                 handler.sendEmptyMessageDelayed(ModelTag,INTERVAL);
             }
         });
-
+//            android:background="@style/btn_select_tyle"
         findViewById(R.id.btnM1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,6 +177,34 @@ public class LEDActivity extends EventBusBaseActivity implements IndicatorSeekBa
             public void onClick(View v) {
                 Log.i(TAG, "onClick:ModelTag2 ");
                 handler.sendEmptyMessageDelayed(ModelTag+2,INTERVAL);
+            }
+        });
+        findViewById(R.id.btnM3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "onClick:ModelTag3 ");
+                handler.sendEmptyMessageDelayed(ModelTag+3,INTERVAL);
+            }
+        });
+        findViewById(R.id.btnM4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "onClick:ModelTag4 ");
+                handler.sendEmptyMessageDelayed(ModelTag+4,INTERVAL);
+            }
+        });
+        findViewById(R.id.btnM5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "onClick:ModelTag5 ");
+                handler.sendEmptyMessageDelayed(ModelTag+5,INTERVAL);
+            }
+        });
+        findViewById(R.id.btnOff).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "onClick:ModelOFF ");
+                handler.sendEmptyMessageDelayed(ModelTag+6,INTERVAL);
             }
         });
     }
